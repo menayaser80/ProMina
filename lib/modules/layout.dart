@@ -5,6 +5,7 @@ import 'package:mina_gallery/modules/slide%20bar.dart';
 import 'package:mina_gallery/modules/upload%20image.dart';
 import 'package:mina_gallery/shared/reusable%20components.dart';
 import '../Icon_broken.dart';
+
 class Layout extends StatefulWidget {
   const Layout({Key? key}) : super(key: key);
 
@@ -28,10 +29,7 @@ class _LayoutState extends State<Layout> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 15,
-                          top: 5
-                      ),
+                      padding: EdgeInsets.only(left: 15, top: 5),
                       child: Text(
                         'Welcome \n Mina',
                         textAlign: TextAlign.left,
@@ -53,7 +51,7 @@ class _LayoutState extends State<Layout> {
                     GestureDetector(
                       onTap: () {
                         navigateTo(context, Login_screen());
-                        },
+                      },
                       child: Container(
                         width: 80.0,
                         height: 40.0,
@@ -90,32 +88,43 @@ class _LayoutState extends State<Layout> {
                                     left: 80,
                                     right: 30,
                                   ),
-                                  decoration:  BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Colors.white.withOpacity(0.5),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children:  [
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
                                       GestureDetector(
-                                        onTap: ()  {
-                                         navigateTo(context,UploadImageScreen() );
+                                        onTap: () {
+                                          navigateTo(
+                                              context, UploadImageScreen(isGallery: true,));
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(20.0),
-                                            color: Color (0xfff0d8fa),
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Color(0xfff0d8fa),
                                           ),
                                           height: 50.0,
                                           width: 150.0,
                                           child: Row(
                                             children: [
-                                              Image(image: AssetImage('assets/images/gallery.png'),),
-                                              Text('Gellary',style: TextStyle(
-                                                fontSize: 20.0,
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),),
+                                              Image(
+                                                image: AssetImage(
+                                                    'assets/images/gallery.png'),
+                                              ),
+                                              Material(
+                                                child: Text(
+                                                  'Gellary',
+                                                  style: TextStyle(
+                                                    fontSize: 20.0,
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -125,23 +134,33 @@ class _LayoutState extends State<Layout> {
                                       ),
                                       GestureDetector(
                                         onTap: () async {
-                                       navigateTo(context, UploadImageScreen());
+                                          navigateTo(
+                                              context, UploadImageScreen(isGallery: false,));
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(20.0),
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
                                             color: Color(0xffecf6ff),
                                           ),
                                           height: 40.0,
                                           width: 250.0,
                                           child: Row(
                                             children: [
-                                              Image(image: AssetImage('assets/images/cam.png'),),
-                                              Text('Camera',style: TextStyle(
-                                                fontSize: 23,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
-                                              ),),
+                                              Image(
+                                                image: AssetImage(
+                                                    'assets/images/cam.png'),
+                                              ),
+                                              Material(
+                                                child: Text(
+                                                  'Camera',
+                                                  style: TextStyle(
+                                                    fontSize: 23,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -150,8 +169,7 @@ class _LayoutState extends State<Layout> {
                                   ),
                                 ),
                               );
-                            }
-                        );
+                            });
                       },
                       child: Container(
                         width: 80.0,
